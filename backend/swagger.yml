@@ -1,0 +1,295 @@
+openapi: 3.0.0
+info:
+  description: Yield and SwaptionVolMtx API
+  version: 1.0.0
+  title: REST API
+servers:
+  - url: http://localhost:3000/market-data
+paths:
+  /yields:    
+    get:
+      tags:
+        - yields
+      responses:
+        200:
+          $ref: "#/components/responses/collection"
+        default:
+          $ref: "#/components/responses/httpErrors"
+  /yields/{id}:
+    parameters:
+      - $ref: "#/components/parameters/id"
+    get:
+      tags:
+        - yields
+      responses:
+        200:
+          description: A Yield
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Yield"
+        default:
+          $ref: "#/components/responses/httpErrors"
+    delete:
+      tags:
+        - yields
+      responses:
+        200:
+          description: Deleted
+          content:
+             text/plain:
+              schema:
+                type: string
+        default:
+          $ref: "#/components/responses/httpErrors"
+  /swaptionvolmtxs:
+    get:
+      tags:
+        - swaptionvolmtxs
+      responses:
+        200:
+          $ref: "#/components/responses/collection"
+        default:
+          $ref: "#/components/responses/httpErrors"
+  /swaptionvolmtxs/{i}:
+    parameters:
+      - $ref: "#/components/parameters/id"
+    get:
+      tags:
+        - swaptionvolmtxs
+      responses:
+        200:
+          description: A SwaptionVolMtx
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SwaptionVolMtx"
+        default:
+          $ref: "#/components/responses/httpErrors"
+    delete:
+      tags:
+        - swaptionvolmtxs
+      responses:
+        200:
+          description: Deleted
+          content:
+             text/plain:
+              schema:
+                type: string
+        default:
+          $ref: "#/components/responses/httpErrors"
+components:
+  parameters:
+    id:
+      name: id
+      description: Unique identifier in uuid format
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    InterpType:
+      type: string
+      enum:
+        - none
+        - round
+        - lin
+        - near
+    DayCountConventionCodes:
+      type: string
+      enum: 
+        - ACTACT
+        - ACTACT29
+    BusinessDayConventionCodes:
+      type: string
+      enum: 
+        - AFTER
+        - BEFORE
+        - EURODOLLAR
+    EndOfMonthRule:
+      type: string
+      enum: 
+        - "TRUE"
+        - "FALSE"
+    Tenor:
+      type: string
+      enum:
+        - MONTHLY
+        - QUARTERLY
+        - SEMIANNUAL
+        - ANNUAL
+    CompoundFrequencies:
+      type: string
+      enum:
+        - DAILY
+        - WEEKLY
+        - MONTHLY
+        - QUARTERLY
+        - SEMIANNUAL
+        - ANNUAL
+        - SIMPLE
+        - CONTINUOUS
+    ExpiryUnits:
+      type: string
+      enum:
+        - DAYS
+        - WEEKS
+        - MONTHS
+        - YEARS
+        - MIXED
+    Yield:
+      type: object
+      properties:
+        curveType:
+          type: string
+          enum: ['Yield']
+        curveID:
+          type: string
+        observationDate:
+          type: string
+          format: date
+        currencyID:
+          type: string
+        interpType:
+          $ref: "#/components/schemas/InterpType"
+        extrapType:
+          $ref: "#/components/schemas/InterpType"
+        dayCountConv:
+          $ref: "#/components/schemas/DayCountConventionCodes"
+        compoundFreq:
+          $ref: "#/components/schemas/CompoundFrequencies"
+        yields:
+          type: object
+          properties:
+            maturty:
+              type: integer
+            yield:
+              type: string
+    SwaptionVolMtx:
+      properties:
+        curveType:
+          type: string
+          enum: ['SwaptionVolMtx']
+        curveID:
+          type: string
+        observationDate:
+          type: string
+          format: date
+        currencyID:
+          type: string
+        lenghtInterpType:
+          $ref: "#/components/schemas/InterpType"
+        lenghtExtrapType:
+          $ref: "#/components/schemas/InterpType"
+        expiryInterpType:
+          $ref: "#/components/schemas/InterpType"
+        expiryExtrapType:
+          $ref: "#/components/schemas/InterpType"
+        tenor:
+          $ref: "#/components/schemas/Tenor"
+        dayCountConv:
+          $ref: "#/components/schemas/DayCountConventionCodes"
+        daysPerAnnum:
+          type: integer
+        holidaySet:
+          type: string
+        expiryUnits:
+          $ref: "#/components/schemas/ExpiryUnits"
+        busDaysConv:
+          $ref: "#/components/schemas/BusinessDayConventionCodes"
+        invalidDateRule:
+          type: string
+          enum:
+            - PREV
+            - NEXT
+            - IGNORE
+        endOfMonthRule:
+          $ref: "#/components/schemas/EndOfMonthRule"
+        length:
+          type: integer
+        volatilities:
+          type: array
+          items:
+            type: object
+            properties:
+              expiry:
+                type: integer
+              volatility:
+                type: string
+  responses:
+    collection:
+      description: Response for a collection of elements
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              oneOf:
+                - $ref: "#/components/schemas/Yield"
+                - $ref: "#/components/schemas/SwaptionVolMtx"
+    Ok:
+      description: Completed successfully
+    BadRequest:
+      description: Bad request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                example: "400"
+                enum: ["400"]
+              message:
+                type: string
+                example: "Bad request"
+            required:
+              - code
+              - message
+    NotFound:
+      description: Not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                example: "404"
+                enum: ["404"]
+              message:
+                type: string
+                example: "Not found"
+            required:
+              - code
+              - message
+    InternalError:
+      description: Internal error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                example: "500"
+                enum: ["500"]
+              message:
+                type: string
+                example: "Internal error"
+            required:
+              - code
+              - message
+    httpErrors:
+      description: "Any http error"
+      content:
+        application/json:
+          example:
+            code: "500"
+            message: Internal error
+          schema:
+            anyOf:
+              - $ref: "#/components/responses/Ok"
+              - $ref: "#/components/responses/BadRequest"      
+              - $ref: "#/components/responses/NotFound" 
+              - $ref: "#/components/responses/InternalError"

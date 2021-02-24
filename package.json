@@ -1,0 +1,17 @@
+{
+  "name": "ebrn-api",
+  "version": "1.0.0",
+  "description": "Simple REST API in node/express with MongoDB database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mongodb",
+    "rest"
+  ],
+  "author": "filipe.velosa@gmail.com",
+  "license": "ISC"
+}

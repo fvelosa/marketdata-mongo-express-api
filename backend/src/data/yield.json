@@ -1,0 +1,54 @@
+[
+  {
+    "Curve Type": "Yield",
+    "Curve ID": "zero",
+    "ObservationDate": "2020/08/25",
+    "Currency": "ALL",
+    "Days per Annum": "lin",
+    "Mean Reversion Rate": "",
+    "daycount Convention": "ACT365FIXED",
+    "Compounding Frequency": "CONTINUOUS",
+    "Yields": [
+      {
+        "Maturity": "31",
+        "Value": "0.02285232378505"
+      },
+      {
+        "Maturity": "92",
+        "Value": "0.02285040618767"
+      },
+      {
+        "Maturity": "184",
+        "Value": "0.02283030348592"
+      },
+      {
+        "Maturity": "273",
+        "Value": "0.02196173438297"
+      },
+      {
+        "Maturity": "365",
+        "Value": "0.02112456066521"
+      },
+      {
+        "Maturity": "730",
+        "Value": "0.03028440543695"
+      },
+      {
+        "Maturity": "1095",
+        "Value": "0.03387952061346"
+      },
+      {
+        "Maturity": "1462",
+        "Value": "0.03821534100461"
+      },
+      {
+        "Maturity": "1826",
+        "Value": "0.04081672580937"
+      },
+      {
+        "Maturity": "2191",
+        "Value": "0.04083588352224"
+      }
+    ]
+  }
+]

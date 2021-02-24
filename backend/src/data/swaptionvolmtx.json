@@ -1,0 +1,329 @@
+[
+  {
+    "Curve Type": "SwaptionVolMtx",
+    "Curve ID": "gbp",
+    "Observation Date": "2020/08/25",
+    "CurrencyID": "USD",
+    "Length Interpolation type": "lin",
+    "Length Extrapolation type": "near",
+    "Maturity Interpolation type": "lin",
+    "Maturity Extrapolation type": "near",
+    "Tenor": "QUARTERLY",
+    "Daycount Convention": "ACT365",
+    "Days per Annum": "365",
+    "Holiday List": "SYD",
+    "Ordinate Type": "MIXED",
+    "Business Day Convention": "MODFOLLOWING",
+    "Invalid Date Rule": "IGNORE",
+    "End of Month Rule": "FALSE",
+    "Length": "12",
+    "Volatilities": [
+      {
+        "Maturity": "1w",
+        "Volatility": "0.970221"
+      },
+      {
+        "Maturity": "2w",
+        "Volatility": "0.965538"
+      },
+      {
+        "Maturity": "1m",
+        "Volatility": "0.946201"
+      },
+      {
+        "Maturity": "2m",
+        "Volatility": "1.094331"
+      },
+      {
+        "Maturity": "3m",
+        "Volatility": "1.229951"
+      },
+      {
+        "Maturity": "6m",
+        "Volatility": "1.172271"
+      },
+      {
+        "Maturity": "9m",
+        "Volatility": "1.152898"
+      },
+      {
+        "Maturity": "1y",
+        "Volatility": "1.10786"
+      },
+      {
+        "Maturity": "18m",
+        "Volatility": "1.202043"
+      },
+      {
+        "Maturity": "2y",
+        "Volatility": "1.229446"
+      },
+      {
+        "Maturity": "3y",
+        "Volatility": "0.898862"
+      },
+      {
+        "Maturity": "4y",
+        "Volatility": "0.694074"
+      },
+      {
+        "Maturity": "5y",
+        "Volatility": "0.558486"
+      },
+      {
+        "Maturity": "6y",
+        "Volatility": "0.455935"
+      },
+      {
+        "Maturity": "7y",
+        "Volatility": "0.396851"
+      },
+      {
+        "Maturity": "8y",
+        "Volatility": "0.359173"
+      },
+      {
+        "Maturity": "9y",
+        "Volatility": "0.338787"
+      },
+      {
+        "Maturity": "10y",
+        "Volatility": "0.333603"
+      },
+      {
+        "Maturity": "12y",
+        "Volatility": "0.340793"
+      },
+      {
+        "Maturity": "15y",
+        "Volatility": "0.376681"
+      },
+      {
+        "Maturity": "20y",
+        "Volatility": "0.41998"
+      },
+      {
+        "Maturity": "25y",
+        "Volatility": "0.811369"
+      }
+    ]
+  },
+  {
+    "Curve Type": "SwaptionVolMtx",
+    "Curve ID": "GBP",
+    "Observation Date": "2020/08/25",
+    "CurrencyID": "USD",
+    "Length Interpolation type": "lin",
+    "Length Extrapolation type": "near",
+    "Maturity Interpolation type": "lin",
+    "Maturity Extrapolation type": "near",
+    "Tenor": "QUARTERLY",
+    "Daycount Convention": "ACT365",
+    "Days per Annum": "365",
+    "Holiday List": "SYD",
+    "Ordinate Type": "MIXED",
+    "Business Day Convention": "MODFOLLOWING",
+    "Invalid Date Rule": "IGNORE",
+    "End of Month Rule": "FALSE",
+    "Length": "24",
+    "Volatilities": [
+      {
+        "Maturity": "1w",
+        "Volatility": "1.013446"
+      },
+      {
+        "Maturity": "2w",
+        "Volatility": "1.006215"
+      },
+      {
+        "Maturity": "1m",
+        "Volatility": "0.981717"
+      },
+      {
+        "Maturity": "2m",
+        "Volatility": "1.021396"
+      },
+      {
+        "Maturity": "3m",
+        "Volatility": "1.051721"
+      },
+      {
+        "Maturity": "6m",
+        "Volatility": "1.004471"
+      },
+      {
+        "Maturity": "9m",
+        "Volatility": "1.061999"
+      },
+      {
+        "Maturity": "1y",
+        "Volatility": "1.093499"
+      },
+      {
+        "Maturity": "18m",
+        "Volatility": "1.015371"
+      },
+      {
+        "Maturity": "2y",
+        "Volatility": "0.932348"
+      },
+      {
+        "Maturity": "3y",
+        "Volatility": "0.748785"
+      },
+      {
+        "Maturity": "4y",
+        "Volatility": "0.587887"
+      },
+      {
+        "Maturity": "5y",
+        "Volatility": "0.499365"
+      },
+      {
+        "Maturity": "6y",
+        "Volatility": "0.422164"
+      },
+      {
+        "Maturity": "7y",
+        "Volatility": "0.379241"
+      },
+      {
+        "Maturity": "8y",
+        "Volatility": "0.351552"
+      },
+      {
+        "Maturity": "9y",
+        "Volatility": "0.339805"
+      },
+      {
+        "Maturity": "10y",
+        "Volatility": "0.336541"
+      },
+      {
+        "Maturity": "12y",
+        "Volatility": "0.348864"
+      },
+      {
+        "Maturity": "15y",
+        "Volatility": "0.388266"
+      },
+      {
+        "Maturity": "20y",
+        "Volatility": "0.432824"
+      },
+      {
+        "Maturity": "25y",
+        "Volatility": "0.870546"
+      }
+    ]
+  },
+  {
+    "Curve Type": "SwaptionVolMtx",
+    "Curve ID": "GBP",
+    "Observation Date": "2020/08/25",
+    "CurrencyID": "USD",
+    "Length Interpolation type": "lin",
+    "Length Extrapolation type": "near",
+    "Maturity Interpolation type": "lin",
+    "Maturity Extrapolation type": "near",
+    "Tenor": "QUARTERLY",
+    "Daycount Convention": "ACT365",
+    "Days per Annum": "365",
+    "Holiday List": "SYD",
+    "Ordinate Type": "MIXED",
+    "Business Day Convention": "MODFOLLOWING",
+    "Invalid Date Rule": "IGNORE",
+    "End of Month Rule": "FALSE",
+    "Length": "36",
+    "Volatilities": [
+      {
+        "Maturity": "1w",
+        "Volatility": "1.065358"
+      },
+      {
+        "Maturity": "2w",
+        "Volatility": "1.05675"
+      },
+      {
+        "Maturity": "1m",
+        "Volatility": "1.034903"
+      },
+      {
+        "Maturity": "2m",
+        "Volatility": "1.013209"
+      },
+      {
+        "Maturity": "3m",
+        "Volatility": "0.988608"
+      },
+      {
+        "Maturity": "6m",
+        "Volatility": "0.921006"
+      },
+      {
+        "Maturity": "9m",
+        "Volatility": "0.929777"
+      },
+      {
+        "Maturity": "1y",
+        "Volatility": "0.930549"
+      },
+      {
+        "Maturity": "18m",
+        "Volatility": "0.864765"
+      },
+      {
+        "Maturity": "2y",
+        "Volatility": "0.803806"
+      },
+      {
+        "Maturity": "3y",
+        "Volatility": "0.638869"
+      },
+      {
+        "Maturity": "4y",
+        "Volatility": "0.527963"
+      },
+      {
+        "Maturity": "5y",
+        "Volatility": "0.464542"
+      },
+      {
+        "Maturity": "6y",
+        "Volatility": "0.402324"
+      },
+      {
+        "Maturity": "7y",
+        "Volatility": "0.366531"
+      },
+      {
+        "Maturity": "8y",
+        "Volatility": "0.347487"
+      },
+      {
+        "Maturity": "9y",
+        "Volatility": "0.339233"
+      },
+      {
+        "Maturity": "10y",
+        "Volatility": "0.34048"
+      },
+      {
+        "Maturity": "12y",
+        "Volatility": "0.354331"
+      },
+      {
+        "Maturity": "15y",
+        "Volatility": "0.396015"
+      },
+      {
+        "Maturity": "20y",
+        "Volatility": "0.442471"
+      },
+      {
+        "Maturity": "25y",
+        "Volatility": "0.901424"
+      }
+    ]
+  }
+]
