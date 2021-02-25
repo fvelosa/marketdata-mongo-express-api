@@ -9,6 +9,7 @@ import "express-async-errors";
 
 import BaseRouter from "./routes";
 import logger from "@shared/Logger";
+import {HttpError} from "@shared/error";
 
 const app = express();
 const {BAD_REQUEST} = StatusCodes;
@@ -28,9 +29,9 @@ if (process.env.NODE_ENV === "production") {
 app.use("/", BaseRouter);
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+app.use((err: HttpError, req: Request, res: Response, next: NextFunction) => {
   logger.err(err, true);
-  return res.status(BAD_REQUEST).json({
+  return res.status(err.status || BAD_REQUEST).json({
     error: err.message,
   });
 });

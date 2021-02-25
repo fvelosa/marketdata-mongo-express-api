@@ -20,6 +20,10 @@ export function MiddlewareFactory(collection: string) {
       try {
         const id = req.params.id;
         const data = await service.get(id);
+        if (!data) {
+          next(new HttpError(404, "Not Found"));
+          return;
+        }
         res.status(200).json(data);
       } catch (error) {
         next(new HttpError(error.message.status, error.message));
@@ -30,6 +34,10 @@ export function MiddlewareFactory(collection: string) {
       try {
         const id = req.params.id;
         const data = await service.remove(id);
+        if (data && !data?.value) {
+          next(new HttpError(404, "Not Found"));
+          return;
+        }
         res.status(200).send("deleted");
       } catch (error) {
         next(new HttpError(error.message.status, error.message));

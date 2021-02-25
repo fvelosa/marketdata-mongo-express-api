@@ -1,5 +1,5 @@
 import {ObjectWithID} from "../entities/";
-import {Collection, ObjectID} from "mongodb";
+import {Collection, ObjectID, FindAndModifyWriteOpResultObject} from "mongodb";
 import {CollectionService} from "./inteface";
 import {collectionFactory} from "./mongo.service";
 
@@ -18,8 +18,7 @@ export class Service<T extends ObjectWithID> implements CollectionService<T> {
     return (await this.collection).findOne({_id: new ObjectID(id)} as any);
   }
 
-  async remove(id: string): Promise<void> {
-    await (await this.collection).findOneAndDelete({_id: new ObjectID(id)} as any);
-    return undefined;
+  async remove(id: string): Promise<void | FindAndModifyWriteOpResultObject<T>> {
+    return await (await this.collection).findOneAndDelete({_id: new ObjectID(id)} as any);
   }
 }
